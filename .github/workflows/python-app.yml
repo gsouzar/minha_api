@@ -49,8 +49,7 @@ jobs:
               gsouzar/minha_api_ta:latest
               gsouzar/minha_api_ta:${{github.sha}}
           
-
-    DEPLOY:
+     DEPLOY:
       name: Implemnetando na EC2
       runs-on: ubuntu-latest
       needs: Image
@@ -62,5 +61,7 @@ jobs:
           host: ${{secrets.EC2_HOST}}
           username: ${{secrets.EC2_USER}}
           key: ${{secrets.EC2_KEY}}
-          script:
+          script: |
+           #TESTE DE ACESSO
+           echo: "Deu certo"
          
