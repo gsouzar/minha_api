@@ -50,4 +50,17 @@ jobs:
               gsouzar/minha_api_ta:${{github.sha}}
           
 
-    
+    DEPLOY:
+      name: Implemnetando na EC2
+      runs-on: ubuntu-latest
+      needs: Image
+
+      steps:
+       - name: Deploy na EC2 via SSH
+         uses: appleboy/ssh-action@1.0.3
+         with:
+          host: ${{secrets.EC2_HOST}}
+          username: ${{secrets.EC2_USER}}
+          key: ${{secrets.EC2_KEY}}
+          script:
+         
