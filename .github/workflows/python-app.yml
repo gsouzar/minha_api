@@ -63,5 +63,5 @@ jobs:
           key: ${{secrets.EC2_KEY}}
           script: |
            #TESTE DE ACESSO
-           echo: "Deu certo"
+           echo "ACESSO LIBERADO"
          
